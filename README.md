@@ -14,7 +14,11 @@ It allows users to:
 - Store upcoming maintenance schedules for proactive servicing.
 
 
+
+
+
 *** INSTALLATION ***
+
 (If you dont have a CustomAddons folder just create one on the same level as the basic addons folder in structure)
 
 1. Clone into Your  Own Custom Addons Directory 
@@ -29,17 +33,13 @@ git clone [https://github.com/AviRamoutar/MachineRegistryOdoo.git machinery_main
 Make Sure your custom addons folder contains this
 
 machinery_maintenance/
-  ├── __init__.py
-  
+  ├── __init__.py  
   ├── __manifest__.py
-  
   ├── models/
-  
   ├── views/
-  
   ├── security/
-  
   ├── data/
+
 
 3. Restart Odoo and run this in the root directory
 ./odoo-bin -c odoo.conf -d <your_database_name> -u machinery_maintenance
