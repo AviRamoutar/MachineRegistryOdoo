@@ -40,4 +40,8 @@ machinery_maintenance/
 ./odoo-bin -c odoo.conf -d <your_database_name> -u machinery_maintenance
 
 4. Activate Dev Mode in the UI settings tab then
-   Apps--> Update Apps List --> Search Machinery Maintenance --> Install/Upgrade 
+   Apps--> Update Apps List --> Search Machinery Maintenance --> Install/Upgrade
+
+
+Preview Image
+<img width="1918" height="870" alt="Machinery Test" src="https://github.com/user-attachments/assets/6799619f-ccdf-45c0-91eb-eda04c234cac" />
