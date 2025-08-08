@@ -46,8 +46,12 @@ machinery_maintenance/
   ├── data/
 
 
+
+
 3. Restart Odoo and run this in the root directory
 ./odoo-bin -c odoo.conf -d <your_database_name> -u machinery_maintenance
+
+
 
 4. Activate Dev Mode in the UI settings tab then
    Apps--> Update Apps List --> Search Machinery Maintenance --> Install/Upgrade
