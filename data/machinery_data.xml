@@ -1,0 +1,36 @@
+<odoo noupdate="1">
+  <record id="machine_cnc_12" model="machinery.machine">
+    <field name="name">CNC Mill #12</field>
+    <field name="serial_number">SN-0012</field>
+    <field name="status">due</field>
+    <field name="next_maintenance_date">2025-09-01</field>
+  </record>
+
+  <record id="machine_lathe_4" model="machinery.machine">
+    <field name="name">Lathe #4</field>
+    <field name="serial_number">SN-0004</field>
+    <field name="status">ok</field>
+    <field name="next_maintenance_date">2025-08-15</field>
+  </record>
+
+  <record id="machine_press_7" model="machinery.machine">
+    <field name="name">Hydraulic Press #7</field>
+    <field name="serial_number">SN-0007</field>
+    <field name="status">down</field>
+    <field name="next_maintenance_date">2025-08-20</field>
+  </record>
+
+  <record id="machine_drill_9" model="machinery.machine">
+    <field name="name">Drill Press #9</field>
+    <field name="serial_number">SN-0009</field>
+    <field name="status">ok</field>
+    <field name="next_maintenance_date">2025-09-10</field>
+  </record>
+
+  <record id="machine_welder_15" model="machinery.machine">
+    <field name="name">Arc Welder #15</field>
+    <field name="serial_number">SN-0015</field>
+    <field name="status">due</field>
+    <field name="next_maintenance_date">2025-08-25</field>
+  </record>
+</odoo>

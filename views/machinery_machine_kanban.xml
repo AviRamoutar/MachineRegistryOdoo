@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_machinery_machine_kanban" model="ir.ui.view">
+        <field name="name">machinery.machine.kanban</field>
+        <field name="model">machinery.machine</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status">
+                <field name="name"/>
+                <field name="serial_number"/>
+                <field name="status"/>
+                <field name="next_maintenance_date"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+                            <div>Serial: <field name="serial_number"/></div>
+                            <div>Status: <field name="status"/></div>
+                            <div>Next: <field name="next_maintenance_date"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

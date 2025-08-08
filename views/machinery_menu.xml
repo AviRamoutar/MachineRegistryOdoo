@@ -1,0 +1,10 @@
+<odoo>
+  <menuitem id="menu_machinery_root" name="Machinery" sequence="10"/>
+  <record id="action_machinery_machine" model="ir.actions.act_window">
+    <field name="name">Machines</field>
+    <field name="res_model">machinery.machine</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="menu_machinery_machines" name="Machines"
+            parent="menu_machinery_root" action="action_machinery_machine" sequence="10"/>
+</odoo>
