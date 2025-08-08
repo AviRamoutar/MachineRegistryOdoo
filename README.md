@@ -30,10 +30,15 @@ Make Sure your custom addons folder contains this
 
 machinery_maintenance/
   ├── __init__.py
+  
   ├── __manifest__.py
+  
   ├── models/
+  
   ├── views/
+  
   ├── security/
+  
   ├── data/
 
 3. Restart Odoo and run this in the root directory
