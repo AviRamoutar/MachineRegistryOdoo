@@ -34,10 +34,15 @@ Make Sure your custom addons folder contains this
 
 machinery_maintenance/
   ├── __init__.py  
+  
   ├── __manifest__.py
+  
   ├── models/
+  
   ├── views/
+  
   ├── security/
+  
   ├── data/
 
 
@@ -49,4 +54,5 @@ machinery_maintenance/
 
 
 Preview Image
+
 <img width="1918" height="870" alt="Machinery Test" src="https://github.com/user-attachments/assets/6799619f-ccdf-45c0-91eb-eda04c234cac" />
