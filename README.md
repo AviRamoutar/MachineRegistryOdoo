@@ -33,6 +33,7 @@ git clone [https://github.com/AviRamoutar/MachineRegistryOdoo.git machinery_main
 Make Sure your custom addons folder contains this
 
 machinery_maintenance/
+
   ├── __init__.py  
   
   ├── __manifest__.py
