@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_machinery_machine_user,machinery.machine user,model_machinery_machine,,1,1,1,0
-access_machinery_maintenance_user,machinery.maintenance user,model_machinery_maintenance,,1,1,1,0
+access_machinery_machine_user,access_machinery_machine_user,model_machinery_machine,base.group_user,1,1,1,0
+access_machinery_machine_manager,access_machinery_machine_manager,model_machinery_machine,base.group_system,1,1,1,1
+access_machinery_maintenance_user,access_machinery_maintenance_user,model_machinery_maintenance,base.group_user,1,1,1,0
+access_machinery_maintenance_manager,access_machinery_maintenance_manager,model_machinery_maintenance,base.group_system,1,1,1,1
+access_machinery_maintenance_reject_wizard,access_machinery_maintenance_reject_wizard,model_machinery_maintenance_reject_wizard,base.group_system,1,1,1,1

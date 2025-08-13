@@ -1,0 +1,70 @@
+/* Override Odoo 17 form field width constraints - High Specificity Approach */
+
+/* Target all char and text fields globally with maximum specificity */
+html body .o_web_client .o_form_view .o_form_sheet .o_field_char input[type="text"],
+html body .o_web_client .o_form_view .o_form_sheet .o_field_text textarea,
+html body .o_web_client .o_form_view .o_form_sheet .o_field_many2one input {
+    width: 100% !important;
+    min-width: 300px !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    padding: 8px !important;
+    resize: vertical !important;
+}
+
+/* Override group cell constraints with highest specificity */
+html body .o_web_client .o_form_view .o_form_sheet .oe_form_group_cell {
+    width: 100% !important;
+    min-width: 300px !important;
+    flex: 1 1 auto !important;
+    max-width: none !important;
+}
+
+/* Make field containers flexible */
+html body .o_web_client .o_form_view .o_form_sheet .o_field_widget.o_field_char,
+html body .o_web_client .o_form_view .o_form_sheet .o_field_widget.o_field_text {
+    width: 100% !important;
+    display: block !important;
+    flex: 1 !important;
+}
+
+/* Expand form sheet width */
+html body .o_web_client .o_form_view .o_form_sheet {
+    max-width: 1200px !important;
+    width: 98% !important;
+}
+
+/* Remove inline style constraints on groups */
+html body .o_web_client .o_form_view .oe_form_group {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+/* Specific targeting for maintenance notes field */
+html body .o_web_client .o_form_view .maintenance_notes_section {
+    width: 100% !important;
+    margin: 15px 0 !important;
+}
+
+html body .o_web_client .o_form_view .maintenance_notes_section .o_field_text,
+html body .o_web_client .o_form_view .maintenance_notes_section .o_field_text textarea {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 200px !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Target by field name for notes specifically */
+html body .o_web_client .o_form_view .o_field_widget[data-field="note"] textarea,
+html body .o_web_client .o_form_view .o_field_text[name="note"] textarea {
+    width: 100% !important;
+    min-width: 400px !important;
+    min-height: 200px !important;
+    max-width: none !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+}

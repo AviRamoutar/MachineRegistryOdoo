@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List (tree) -->
+    <record id="view_machinery_maintenance_tree" model="ir.ui.view">
+        <field name="name">machinery.maintenance.tree</field>
+        <field name="model">machinery.maintenance</field>
+        <field name="arch" type="xml">
+            <tree string="Maintenance Reports">
+                <field name="date"/>
+                <field name="machine_id"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_machinery_maintenance_form" model="ir.ui.view">
+        <field name="name">machinery.maintenance.form</field>
+        <field name="model">machinery.maintenance</field>
+        <field name="arch" type="xml">
+            <form string="Maintenance Report">
+                <header>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,to_approve,approved,done,cancel"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="machine_id"/>
+                        <field name="date"/>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                    </group>
+                    <group>
+                        <field name="note"
+                               placeholder="e.g. Good to go / Keep belt lubed every 2 weeks / Needs part #273"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_submit" type="object" string="Submit"
+                            class="btn-primary"
+                            attrs="{'invisible':[('state','!=','draft')]}"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-success"
+                            attrs="{'invisible':[('state','!=','to_approve')]}"/>
+                    <button name="action_reject" type="object" string="Reject"
+                            class="btn-danger"
+                            attrs="{'invisible':[('state','!=','to_approve')]}"/>
+                    <button name="action_mark_done" type="object" string="Mark Done"
+                            attrs="{'invisible':[('state','!=','approved')]}"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_machinery_maintenance" model="ir.actions.act_window">
+        <field name="name">Maintenance Reports</field>
+        <field name="res_model">machinery.maintenance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first Maintenance Report</p>
+        </field>
+    </record>
+
+    <!-- Menu (uses existing parent menu_machinery_root) -->
+    <menuitem id="menu_machinery_maintenance"
+              name="Maintenance Reports"
+              parent="menu_machinery_root"
+              action="action_machinery_maintenance"
+              sequence="20"/>
+</odoo>

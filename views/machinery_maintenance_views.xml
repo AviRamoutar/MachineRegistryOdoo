@@ -18,7 +18,7 @@
         </field>
     </record>
 
-    <!-- Maintenance Form View -->
+    <!-- Maintenance Form View with Wide Fields -->
     <record id="view_machinery_maintenance_form" model="ir.ui.view">
         <field name="name">machinery.maintenance.form</field>
         <field name="model">machinery.maintenance</field>
@@ -52,15 +52,32 @@
                             <field name="purchase_id" readonly="1" invisible="not purchase_id"/>
                         </group>
                     </group>
-                    <group string="Parts Required" invisible="report_type != 'part'">
-                        <group>
-                            <field name="product_id"/>
-                            <field name="quantity"/>
-                        </group>
+                    <group string="Parts Required" invisible="report_type != 'part'" colspan="4">
+                        <field name="product_id"/>
+                        <field name="quantity"/>
                     </group>
-                    <group string="Notes">
-                        <field name="note" nolabel="1" placeholder="e.g. Keep belt lubed; relube every 2 weeks"/>
-                    </group>
+                    
+                    <!-- Full-width notes section outside normal group structure -->
+                    <div class="maintenance_notes_section" style="width: 100%; margin: 20px 0;">
+                        <label for="note" string="Maintenance Notes" class="o_form_label" style="font-weight: bold; display: block; margin-bottom: 8px;"/>
+                        <field name="note" nolabel="1" 
+                               placeholder="Enter detailed maintenance notes here...
+
+Example format:
+MONTHLY CALIBRATION COMPLETED SUCCESSFULLY
+
+All systems checked and operational
+Performance within specifications  
+No issues detected
+
+Next Actions:
+- Schedule follow-up in 30 days
+- Monitor temperature trends
+- Update maintenance log
+
+STATUS: READY FOR PRODUCTION"
+                               style="width: 100% !important; min-height: 200px !important; min-width: 400px !important; max-width: none !important;"/>
+                    </div>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -68,38 +85,6 @@
                     <field name="message_ids"/>
                 </div>
             </form>
-        </field>
-    </record>
-
-    <!-- Maintenance Kanban View -->
-    <record id="view_machinery_maintenance_kanban" model="ir.ui.view">
-        <field name="name">machinery.maintenance.kanban</field>
-        <field name="model">machinery.maintenance</field>
-        <field name="arch" type="xml">
-            <kanban default_group_by="state" class="o_kanban_small_column">
-                <field name="machine_id"/>
-                <field name="date"/>
-                <field name="report_type"/>
-                <field name="state"/>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_card oe_kanban_global_click">
-                            <div class="oe_kanban_content">
-                                <strong><field name="machine_id"/></strong>
-                                <div>
-                                    <field name="date"/> - <field name="report_type"/>
-                                </div>
-                                <div class="o_kanban_record_bottom">
-                                    <div class="oe_kanban_bottom_left">
-                                        <field name="state" widget="label_selection" 
-                                               options="{'classes': {'draft': 'secondary', 'to_approve': 'warning', 'approved': 'success', 'rejected': 'danger', 'done': 'info'}}"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
         </field>
     </record>
 
@@ -124,7 +109,7 @@
     <record id="action_machinery_maintenance" model="ir.actions.act_window">
         <field name="name">Maintenance Reports</field>
         <field name="res_model">machinery.maintenance</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first maintenance report!
